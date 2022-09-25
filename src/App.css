@@ -12,6 +12,17 @@
     /* grid-gap: 10px;*/
 }
 
+.app-wrapper-content {
+    grid-area: c;
+    background-color: darkkhaki;
+
+}
+
+.app-wrapper-content img {
+    width: 1000px;
+}
+
+
 
 
 
