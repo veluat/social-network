@@ -2,9 +2,20 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from "./Post";
 
-type MyPostsType = {}
+type PostsPropsType = {
+    posts: PostsType[]
+}
 
-const MyPosts: React.FC<MyPostsType> = (props) => {
+type PostsType = {
+    id: number,
+    message: string,
+    likesCount: number
+}
+
+const MyPosts = (props: PostsPropsType) => {
+
+    let postElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
+
     return (
 
         <div className={s.postsBlock}>
@@ -19,8 +30,7 @@ const MyPosts: React.FC<MyPostsType> = (props) => {
                 </div>
             </div>
             <div className={s.posts}>
-                <Post message={'Hi, how are you?'} likesCount={15}/>
-                <Post message={"It's my first post"} likesCount={20}/>
+                {postElements}
             </div>
         </div>
 

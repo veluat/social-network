@@ -5,20 +5,25 @@ import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
+import {RootStateType, state} from "./redux/state";
 
-const App = () => {
+type AppPropsType = {
+    state: RootStateType
+}
+
+const App = (props: AppPropsType) => {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
-                    <Route path='/dialogs' component={Dialogs}/>
-                    <Route path='/profile' component={Profile}/>
+                    <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} />}/>
+                    <Route path='/profile' render={() => <Profile state={props.state.profilePage} />}/>
                 </div>
             </div>
         </BrowserRouter>
-    );
+    )
 }
 
 export default App;
