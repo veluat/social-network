@@ -1,0 +1,35 @@
+.sidebar img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0px #ffffff, 0 0 15px #b7b7b7;
+    margin-right: 8px;
+    margin-left: 20px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: row;
+    font-family: Tahoma, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    align-items: center;
+    line-height: 16px;
+    color: #788292;
+    border-bottom: 1px solid #F1F2F6;
+    height: 50px;
+}
+
+/*
+.friendsItems {
+    display: flex;
+    width: 140px;
+    flex-wrap: wrap;
+}
+
+.friendsBlock {
+    padding-top: 150px;
+    color: #106966;
+    font-weight: bold;
+}*/
