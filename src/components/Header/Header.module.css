@@ -28,11 +28,11 @@
     color: #203758;
     padding-left: 20px;
     align-items: center;
-}
+}*/
 
 .loginBlock {
-    !*float: right;*!
-    !*margin-right: 900px;*!
+    /*float: right;*/
+    /*margin-right: 900px;*/
 }
 
 .loginBlock a {
@@ -40,4 +40,4 @@
     font-family: Tahoma, serif;
     color: #203758;
     text-decoration: none;
-}*/
+}

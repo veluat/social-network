@@ -2,7 +2,12 @@
     padding: 10px;
 }
 
+.descriptionBlock img {
+    width: 250px;
+    height: 250px;
+}
+
 .backgroundImg{
     /*height: 450px;*/
-    width: 1400px;
+    width: 1500px;
 }

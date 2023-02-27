@@ -20,7 +20,7 @@
     font-weight: bold;
 }
 
-/*.dialog a {
+.dialog a {
     color: black;
     text-decoration: none;
 }
@@ -30,7 +30,7 @@
     height: 25px;
     border-radius: 30px;
     margin-right: 5px;
-}*/
+}
 
 .messages {
     /*
