@@ -1,12 +1,43 @@
-
 .header {
     grid-area: h;
     background-color: lightslategray;
 
-}
+    /* display: flex;
+     align-items: center;
+     justify-content: space-between;
 
+     position: absolute;
+     width: 1440px;
+     height: 60px;
+     left: 0px;
+     top: 0px;
+     z-index: 1;
+     border-bottom: 1px solid #F0F7FF;
+ */
+
+}
 .header img {
     width: 60px;
 }
 
+/*.logo {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Tahoma, serif;
+    color: #203758;
+    padding-left: 20px;
+    align-items: center;
+}
 
+.loginBlock {
+    !*float: right;*!
+    !*margin-right: 900px;*!
+}
+
+.loginBlock a {
+    font-weight: bold;
+    font-family: Tahoma, serif;
+    color: #203758;
+    text-decoration: none;
+}*/

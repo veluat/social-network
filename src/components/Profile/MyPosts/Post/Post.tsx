@@ -9,7 +9,7 @@ type PostType = {
 const Post: React.FC<PostType> = (props) => {
     return (
         <div className={s.item}>
-            <img src='https://cdn.icon-icons.com/icons2/1371/PNG/512/traditionajapaneseman_90816.png' alt='avatar'/>
+            <img src='https://icons.iconarchive.com/icons/diversity-avatars/avatars/256/traditiona-japanese-man-icon.png' alt='avatar'/>
             {props.message}
             <div>
                 <span>Likes: </span> {props.likesCount}
