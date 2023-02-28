@@ -1,8 +1,10 @@
 .usersPhoto img {
-    width: 90px;
-    height: 90px;
-   /* border-radius: 50%;
-    box-shadow: 0 0 0 0px #ffffff, 0 0 15px #b7b7b7;*/
+    width: 150px;
+    height: 150px;
+   border-radius: 50%;
+     /*
+     box-shadow: 0 0 0 0px #ffffff, 0 0 15px #b7b7b7;
+     */
 }
 
 .usersContainer {
@@ -22,10 +24,11 @@
 }
 
 .loadingIcon {
+    max-width: 50px;
+    height: 50px;
     margin-top: 20px;
     margin-left: 20px;
-    width: 50px;
-    height: 50px;
+
 }
 
 

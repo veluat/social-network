@@ -23,31 +23,31 @@ const initialState =  {
         },
         {
             id: 2,
-            name: 'Olya',
+            name: 'Katya',
             ava: 'https://cdn2.vectorstock.com/i/1000x1000/54/41/young-and-elegant-woman-avatar-profile-vector-9685441.jpg'
         },
         {
             id: 3,
-            name: 'Marina',
+            name: 'Julia',
             ava: 'https://cdn2.vectorstock.com/i/1000x1000/26/06/young-executive-woman-profile-icon-vector-9692606.jpg'
         },
         {
             id: 4,
-            name: 'Egor',
+            name: 'Oleg',
             ava: 'https://cdn5.vectorstock.com/i/1000x1000/23/49/new-man-avatar-icon-flat-vector-19152349.jpg'
         },
         {
             id: 5,
-            name: 'Oleg',
+            name: 'Alex',
             ava: 'https://cdn4.vectorstock.com/i/1000x1000/23/63/man-avatar-icon-flat-vector-19152363.jpg'
         },
     ] as Array<DialogType>,
     messages: [
         {id: 1, message: 'Hi'},
         {id: 2, message: 'How are you?'},
-        {id: 3, message: 'Wooooooow'},
-        {id: 4, message: 'Yoooooo'},
-        {id: 5, message: 'Hohohohoh'}
+        {id: 3, message: 'What is new?'},
+        {id: 4, message: 'Go to the park'},
+        {id: 5, message: 'Have a gut day'}
     ] as Array<MessageType>,
     newMessageText: ''
 }
