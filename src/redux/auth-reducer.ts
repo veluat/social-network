@@ -1,4 +1,6 @@
 import {ActionsType} from "./redux-store";
+import {authAPI} from "../api/api";
+import {Dispatch} from "redux";
 
 const initialState:DataType = {
     userId: null,
@@ -33,7 +35,13 @@ const authReducer = (state: DataType = initialState, action: ActionsType): DataT
 }
 
 export const setAuthUserData = (userId: string | null, email: string | null, login: string | null) => ({type: "SET-USER-DATA", data: {userId, email, login}} as const);
-/*export const setIsFetching = (isFetching:boolean) => ({type: "TOGGLE-IS-FETCHING", isFetching} as const)*/
-
+export const getAuthUserData = () => (dispatch: Dispatch<ActionsType>) => {
+    authAPI.me().then(data => {
+        if (data.resultCode === 0) {
+            let {id, login, email} = data.data;
+            dispatch(setAuthUserData(id, email, login))
+        }
+    })
+}
 
 export default authReducer;

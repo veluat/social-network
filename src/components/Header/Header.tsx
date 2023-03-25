@@ -12,15 +12,13 @@ const Header = (props: headerPropsType) => {
     return (
         <header className={s.header}>
             <div className={s.logo}>
-                {/*  <div>Samurai's</div>*/}
-                <div><img src={logo} alt='logo'/></div>
-                <div>SWay</div>
+                <img src={logo} alt='logo'/>
+                <div className={s.logoText}>Social Network Samurai Way</div>
             </div>
-            <div className={s.loginBlock}>
-                {props.isAuth ? props.login :
-                <NavLink to={'/login'}>Login</NavLink> }
+            <div>
+                <div className={s.loginBlock}>{props.isAuth ? props.login :
+                    <NavLink to={'/login'}>Login</NavLink>}</div>
             </div>
-
         </header>
     );
 };
