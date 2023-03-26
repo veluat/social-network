@@ -10,4 +10,5 @@
 .backgroundImg{
     /*height: 450px;*/
     width: 1500px;
+    border-bottom: 5px solid coral;
 }
