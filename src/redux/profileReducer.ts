@@ -1,6 +1,7 @@
 import {ActionsType} from "./redux-store";
 import {Dispatch} from "redux";
-import {usersAPI} from "../api/api";
+import {profileAPI, usersAPI} from "../api/api";
+import profile from "../components/Profile/Profile";
 
 export type PostType = {
     id: number
@@ -17,7 +18,8 @@ const initialState: ProfilePageType = {
         {id: 5, message: 'Qaaaaaqqqq', likesCount: 8}
     ],
     newPostText: '',
-    profile: null
+    profile: null,
+    status: ''
 }
 
 /*export type ProfileType = {
@@ -29,6 +31,7 @@ export type ProfilePageType = {
     posts: Array<PostType>,
     newPostText: string,
     profile: string | null
+    status: string
 }
 
 const profileReducer = (state: ProfilePageType = initialState, action: ActionsType): ProfilePageType => {
@@ -44,11 +47,16 @@ const profileReducer = (state: ProfilePageType = initialState, action: ActionsTy
             return {
                 ...state,
                 newPostText: action.newText
-            }
+            };
         case "SET-USER-PROFILE":
             return {
                 ...state,
                 profile: action.profile
+            };
+        case "SET-STATUS":
+            return {
+                ...state,
+                status: action.status
             }
         default:
             return state;
@@ -62,10 +70,27 @@ export const updatePostText = (newText: string) => ({
 export const setUserProfile = (profile: string | null) => ({
     type: "SET-USER-PROFILE", profile
 } as const)
+export const setStatus = (status: string) => ({type: "SET-STATUS", status} as const)
+
 export const getUserProfile = (userId: string) => (dispatch: Dispatch<ActionsType>) => {
     usersAPI.getProfile(userId).then(response => {
         dispatch(setUserProfile(response.data));
     })
 }
+
+export const getStatus = (userId: string) => (dispatch: Dispatch<ActionsType>) => {
+    profileAPI.getStatus(userId).then(response => {
+        dispatch(setStatus(response.data));
+    })
+}
+
+export const updateStatus = (status: string) => (dispatch: Dispatch<ActionsType>) => {
+    profileAPI.updateStatus(status).then(response => {
+        if (response.data.resultCode === 0) {
+            dispatch(setStatus(status));
+        }
+    })
+}
+
 
 export default profileReducer;
