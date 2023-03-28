@@ -1,7 +1,6 @@
 import {ActionsType} from "./redux-store";
 import {Dispatch} from "redux";
 import {profileAPI, usersAPI} from "../api/api";
-import profile from "../components/Profile/Profile";
 
 export type PostType = {
     id: number
@@ -21,11 +20,6 @@ const initialState: ProfilePageType = {
     profile: null,
     status: ''
 }
-
-/*export type ProfileType = {
-    photos: string | null,
-    status: string | number
-}*/
 
 export type ProfilePageType = {
     posts: Array<PostType>,
@@ -57,7 +51,7 @@ const profileReducer = (state: ProfilePageType = initialState, action: ActionsTy
             return {
                 ...state,
                 status: action.status
-            }
+            };
         default:
             return state;
     }
@@ -72,18 +66,12 @@ export const setUserProfile = (profile: string | null) => ({
 } as const)
 export const setStatus = (status: string) => ({type: "SET-STATUS", status} as const)
 
+
 export const getUserProfile = (userId: string) => (dispatch: Dispatch<ActionsType>) => {
     usersAPI.getProfile(userId).then(response => {
         dispatch(setUserProfile(response.data));
     })
 }
-
-export const getStatus = (userId: string) => (dispatch: Dispatch<ActionsType>) => {
-    profileAPI.getStatus(userId).then(response => {
-        dispatch(setStatus(response.data));
-    })
-}
-
 export const updateStatus = (status: string) => (dispatch: Dispatch<ActionsType>) => {
     profileAPI.updateStatus(status).then(response => {
         if (response.data.resultCode === 0) {
@@ -91,6 +79,10 @@ export const updateStatus = (status: string) => (dispatch: Dispatch<ActionsType>
         }
     })
 }
-
+export const getStatus = (userId: string) => (dispatch: Dispatch<ActionsType>) => {
+    profileAPI.getStatus(userId).then(response => {
+        dispatch(setStatus(response.data));
+    })
+}
 
 export default profileReducer;
