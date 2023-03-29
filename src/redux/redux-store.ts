@@ -12,6 +12,7 @@ import usersReducer, {
 } from "./usersReducer";
 import authReducer, {setAuthUserData} from "./auth-reducer";
 import thunkMiddleware from "redux-thunk";
+import {reducer as formReducer} from 'redux-form'
 
 export type ActionsType =
     ReturnType<typeof addPost> | ReturnType<typeof updatePostText> |
@@ -28,7 +29,8 @@ let reducers = combineReducers(
         dialogsPage: dialogsReducer,
         usersPage: usersReducer,
         sidebarBlock: sidebarReducer,
-        auth: authReducer
+        auth: authReducer,
+        form: formReducer
     }
 )
 
