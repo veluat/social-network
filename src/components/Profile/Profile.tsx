@@ -1,7 +1,6 @@
 import React from 'react';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./My Posts/MyPostsContainer";
-import {updateStatus} from "../../redux/profileReducer";
 
 export type ProfileProps = {
     profile: string | null

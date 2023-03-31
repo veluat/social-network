@@ -1,5 +1,5 @@
-import profileReducer, {addPost, updatePostText} from "./profileReducer";
-import dialogsReducer, {sendMessage, updateMessageText} from "./dialogsReducer";
+import profileReducer, {addPost, } from "./profileReducer";
+import dialogsReducer, {sendMessage} from "./dialogsReducer";
 import sidebarReducer from "./sidebarReducer";
 
 /*const store: StoreType = {
