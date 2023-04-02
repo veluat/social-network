@@ -34,11 +34,6 @@ const profileReducer = (state: ProfilePageType = initialState, action: ActionsTy
                 ...state,
                 posts: [...state.posts, newPost]
             };
-        /*case "UPDATE-NEW-POST-TEXT":
-            return {
-                ...state,
-                newPostText: action.newText
-            };*/
         case "SET-USER-PROFILE":
             return {
                 ...state,
@@ -55,9 +50,6 @@ const profileReducer = (state: ProfilePageType = initialState, action: ActionsTy
 }
 
 export const addPost = (newPostText: string) => ({type: "ADD-POST", newPostText} as const)
-/*export const updatePostText = (newText: string) => ({
-    type: "UPDATE-NEW-POST-TEXT", newText: newText
-} as const)*/
 export const setUserProfile = (profile: string | null) => ({
     type: "SET-USER-PROFILE", profile
 } as const)

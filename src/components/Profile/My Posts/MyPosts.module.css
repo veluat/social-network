@@ -1,5 +1,6 @@
 .postsBlock {
     padding: 10px;
+
 }
 
 .posts {
@@ -10,14 +11,16 @@
   /*  position: absolute;*/
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+
 }
 
 .newPostArea textarea {
     border: 1.5px solid #e0e0e0;
     border-radius: 8px;
     box-sizing: border-box;
-    width: 425px;
-    height: 35px;
+    width: 400px;
+    min-height: min-content;
     background: #FFFFFF;
     resize: none;
     font-family: 'Montserrat', serif;

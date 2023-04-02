@@ -7,12 +7,10 @@ import userAvatarIcon from './user-avatar-icon.png'
 const Post = (props: PostType) => {
     return (
         <div className={s.posts}>
+            <img src={userAvatarIcon} alt="avatar"/>
             <div className={s.item}>
-                <img src={userAvatarIcon} alt="avatar"/>
-                {props.message}
-                <div>
-                    <span>like</span>-{props.likesCount}
-                </div>
+                <div>{props.message}</div>
+                <div><span>like</span>-{props.likesCount}</div>
             </div>
         </div>
     );
