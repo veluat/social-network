@@ -9,6 +9,8 @@ import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 type MapStatePropsType = {
     profile: string | null
     status: string
+    authorizedUserId: string | null
+    isAuth: boolean
 }
 type MapDispatchPropsType = {
     getUserProfile: (userId: string) => void
@@ -16,7 +18,8 @@ type MapDispatchPropsType = {
     updateStatus: (status: string) => void
 }
 type PathParamsType = {
-    userId: string | undefined
+    userId: string
+
 }
 type ProfilePropsType = MapStatePropsType & MapDispatchPropsType
 type PropsType = RouteComponentProps<PathParamsType> & ProfilePropsType
@@ -25,7 +28,7 @@ class ProfileContainer extends React.Component<PropsType> {
     componentDidMount() {
         let userId = this.props.match.params.userId;
         if (!userId) {
-            userId = '27676';
+            userId = this.props.authorizedUserId as string;
         }
         this.props.getUserProfile(userId);
         this.props.getStatus(userId);
@@ -42,7 +45,9 @@ class ProfileContainer extends React.Component<PropsType> {
 
 let mapStateToProps = (state: AppStateType): MapStatePropsType => ({
     profile: state.profilePage.profile,
-    status: state.profilePage.status
+    status: state.profilePage.status,
+    authorizedUserId: state.auth.userId,
+    isAuth: state.auth.isAuth
 })
 
 let withUrlDataContainerComponent = withRouter(ProfileContainer);
