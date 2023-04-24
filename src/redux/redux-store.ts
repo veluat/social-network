@@ -13,9 +13,10 @@ import usersReducer, {
 import authReducer, {setAuthUserData} from "./auth-reducer";
 import thunkMiddleware, {ThunkAction} from "redux-thunk";
 import {reducer as formReducer} from 'redux-form'
+import appReducer, {initializedSuccess} from "./app-reducer";
 
 export type ActionsType =
-    ReturnType<typeof addPost> |
+    ReturnType<typeof addPost> | ReturnType<typeof initializedSuccess> |
     ReturnType<typeof sendMessage> |
     ReturnType<typeof followSuccess> | ReturnType<typeof unFollowSuccess> |
     ReturnType<typeof setUsers> | ReturnType<typeof setCurrentPage> |
@@ -32,6 +33,7 @@ let reducers = combineReducers(
         usersPage: usersReducer,
         sidebarBlock: sidebarReducer,
         auth: authReducer,
+        app: appReducer,
         form: formReducer
     }
 )

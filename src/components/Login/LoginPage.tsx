@@ -66,7 +66,7 @@ type LoginFormValuesType = {
 
 //type LoginFormValuesTypeKeys = Extract <keyof LoginFormValuesType, string>
 
-const Login: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
+const LoginPage: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     const onSubmit = (formData: LoginFormValuesType) => {
         props.login(formData.email, formData.password, formData.rememberMe
         //, formData.captcha
@@ -87,5 +87,5 @@ const mapStateToProps = (state: AppStateType): MapStatePropsType => ({
    // captchaUrl: state.auth.captchaUrl,
     isAuth: state.auth.isAuth
 })
-export default connect(mapStateToProps, {login})(Login);
+export default connect(mapStateToProps, {login})(LoginPage);
 
