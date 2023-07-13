@@ -22,6 +22,7 @@ type MapStatePropsType = {
 }
 
 class App extends React.Component<MapStatePropsType & MapDispatchPropsType> {
+
     componentDidMount() {
         this.props.initializeApp()
     }
