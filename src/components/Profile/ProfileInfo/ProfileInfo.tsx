@@ -23,7 +23,7 @@ const ProfileInfo = (props: PropsType) => {
                      alt='background img'/>
             </div>
             <div className={s.descriptionBlock}>
-                <img src={props.profile.photos.large}/>
+                <img src={props.profile.photos.large} alt={"profile photo"}/>
                 <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
             </div>
         </div>

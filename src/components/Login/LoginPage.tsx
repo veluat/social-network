@@ -1,6 +1,6 @@
 import React from 'react';
 import {Field, InjectedFormProps, reduxForm} from "redux-form";
-import {Input} from "../common/FormsControls/FormsControls";
+import {createField, Input} from "../common/FormsControls/FormsControls";
 import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
@@ -20,18 +20,9 @@ export const LoginForm: React.FC<InjectedFormProps<LoginFormValuesType
 }) => {
     return (
         <form onSubmit={handleSubmit}>
-            <div>
-                {/*{createField<LoginFormValuesTypeKeys>('email', 'login', [required], Input)}*/}
-                <Field placeholder={"Email"} name={'email'} component={Input}
-                       validate={[required]}/>
-            </div>
-            <div>
-                <Field placeholder={"Password"} name={'password'} component={Input}
-                       validate={[required]} type={'password'}/>
-            </div>
-            <div>
-                <Field type={'checkbox'} component={Input} name={'rememberMe'}/> remember me
-            </div>
+            {createField<LoginFormValuesTypeKeys>('Email', 'email', [required], Input)}
+            {createField<LoginFormValuesTypeKeys>('Password', 'password', [required], Input, {type: 'password'})}
+            {createField<LoginFormValuesTypeKeys>('', 'rememberMe', [], Input, {type: 'checkbox'}, 'rememberMe')}
             { error && <div className={styles.formSummaryError}>
                 {error}
             </div> }
@@ -64,7 +55,7 @@ type LoginFormValuesType = {
     //captcha: string
 }
 
-//type LoginFormValuesTypeKeys = Extract <keyof LoginFormValuesType, string>
+type LoginFormValuesTypeKeys = Extract <keyof LoginFormValuesType, string>
 
 const LoginPage: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
     const onSubmit = (formData: LoginFormValuesType) => {

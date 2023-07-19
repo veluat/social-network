@@ -1,11 +1,12 @@
-import {Action, applyMiddleware, combineReducers, createStore} from "redux";
+import {AnyAction, applyMiddleware, combineReducers, createStore} from "redux";
 import profileReducer, {addPost, setStatus, setUserProfile} from "./profileReducer";
 import dialogsReducer, {sendMessage} from "./dialogsReducer";
 import sidebarReducer from "./sidebarReducer";
 import usersReducer, {
     followSuccess,
     setCurrentPage,
-    setIsFetching, setIsFollowingInProgress,
+    setIsFetching,
+    setIsFollowingInProgress,
     setTotalUsersCount,
     setUsers,
     unFollowSuccess
@@ -24,7 +25,7 @@ export type ActionsType =
     ReturnType<typeof setUserProfile> | ReturnType<typeof setAuthUserData> |
     ReturnType<typeof setIsFollowingInProgress> | ReturnType<typeof setStatus>
 
-export type BaseThunkType<A extends Action, R = Promise<void>> = ThunkAction<R, AppStateType, unknown, A>
+//export type BaseThunkType<A extends Action, R = Promise<void>> = ThunkAction<R, AppStateType, unknown, ActionsType>
 
 let reducers = combineReducers(
     {
@@ -38,7 +39,10 @@ let reducers = combineReducers(
     }
 )
 
-export type AppStateType = ReturnType<typeof reducers>
+export type AppStateType = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
+
+export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, AppStateType, unknown, AnyAction>
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));
 /*window.store = store;*/

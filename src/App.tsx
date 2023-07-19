@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {ComponentType} from 'react';
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
@@ -31,7 +31,6 @@ class App extends React.Component<MapStatePropsType & MapDispatchPropsType> {
             return <Preloader/>
         } else {
             return (
-                <BrowserRouter>
                     <div className="app-wrapper">
                         <HeaderContainer/>
                         <Navbar/>
@@ -46,7 +45,6 @@ class App extends React.Component<MapStatePropsType & MapDispatchPropsType> {
                                    render={() => <LoginPage/>}/>
                         </div>
                     </div>
-                </BrowserRouter>
             );
         }
     }
@@ -56,6 +54,6 @@ const MapStateToProps = (state: AppStateType): MapStatePropsType => ({
     initialized: state.app.initialized
 })
 
-export default compose (
+export default compose<ComponentType> (
     withRouter,
     connect(MapStateToProps, {initializeApp}))(App);
