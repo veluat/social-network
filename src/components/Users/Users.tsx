@@ -19,7 +19,7 @@ const Users = (props: UsersType) => {
 
     return <div className={s.usersContainer}>
         <Paginator currentPage={props.currentPage} onPageChanged={props.onPageChanged}
-                   totalUsersCount={props.totalUsersCount} pageSize={props.pageSize}/>
+                   totalItemsCount={props.totalUsersCount} pageSize={props.pageSize} portionSize={10}/>
         <div className={s.usersContainer}>
             {props.users.map((u, index) =>
                 <User key={index} user={u} unFollow={props.unFollow} followingInProgress={props.followingInProgress}
