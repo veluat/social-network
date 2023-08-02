@@ -14,7 +14,7 @@ const Header = (props: HeaderPropsType) => {
         <header className={s.header}>
             <div className={s.logo}>
                 <img src={logo} alt='logo'/>
-                <div className={s.logoText}>Social Network Samurai Way</div>
+                <div className={s.logoText}>Social Network & Community</div>
             </div>
             <div>
                 <div className={s.loginBlock}>
