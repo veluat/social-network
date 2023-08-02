@@ -1,14 +1,22 @@
 .descriptionBlock {
     padding: 10px;
+
 }
 
 .descriptionBlock img {
     width: 250px;
     height: 250px;
+
 }
 
+.avatar {
+border: 1px solid lightslategray;
+    border-radius: 50%;
+}
+/*
+
 .backgroundImg{
-    /*height: 450px;*/
+    !*height: 450px;*!
     width: 1500px;
     border-bottom: 5px solid coral;
-}
+}*/

@@ -2,7 +2,7 @@ import React from 'react';
 import s from './ProfileInfo.module.css'
 import background from './Landscape.jpg'
 import Preloader from "../../common/Preloader/Preloader";
-import {ProfileStatus} from './ProfileStatus'
+import userAvatar from '../../../assets/images/user-avatar-icon.png'
 import {ProfileStatusWithHooks} from "./ProfileStatusWithHooks";
 
 export type PropsType = {
@@ -17,13 +17,13 @@ const ProfileInfo = (props: PropsType) => {
     }
     return (
         <div>
-            <div>
+            {/*<div>
                 <img className={s.backgroundImg}
                      src={background}
                      alt='background img'/>
-            </div>
+            </div>*/}
             <div className={s.descriptionBlock}>
-                <img src={props.profile.photos.large} alt={"profile photo"}/>
+                <img src={props.profile.photos.large || userAvatar} alt={"profile photo"} className={userAvatar ? s.avatar : ''}/>
                 <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
             </div>
         </div>
