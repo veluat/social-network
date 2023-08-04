@@ -1,9 +1,10 @@
 import React from 'react';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./My Posts/MyPostsContainer";
+import {ProfileUserType} from "../../redux/profileReducer";
 
 export type ProfileProps = {
-    profile: string | null
+    profile: ProfileUserType
     status: string
     updateStatus: (status: string) => void
     isOwner: boolean

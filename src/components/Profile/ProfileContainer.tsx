@@ -3,11 +3,11 @@ import Profile from "./Profile";
 import {AppStateType} from "../../redux/redux-store";
 import {connect} from "react-redux";
 import {withRouter, RouteComponentProps} from "react-router-dom";
-import {getStatus, getUserProfile, savePhoto, updateStatus} from "../../redux/profileReducer";
+import {getStatus, getUserProfile, ProfileUserType, savePhoto, updateStatus} from "../../redux/profileReducer";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 type MapStatePropsType = {
-    profile: string | null
+    profile: ProfileUserType
     status: string
     authorizedUserId: string | null
     isAuth: boolean

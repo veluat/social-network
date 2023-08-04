@@ -1,5 +1,5 @@
 import {AnyAction, applyMiddleware, combineReducers, createStore} from "redux";
-import profileReducer, {addPost, setStatus, setUserProfile} from "./profileReducer";
+import profileReducer, {addPost, savePhotoSuccess, setStatus, setUserProfile} from "./profileReducer";
 import dialogsReducer, {sendMessage} from "./dialogsReducer";
 import sidebarReducer from "./sidebarReducer";
 import usersReducer, {
@@ -18,7 +18,7 @@ import appReducer, {initializedSuccess} from "./app-reducer";
 
 export type ActionsType =
     ReturnType<typeof addPost> | ReturnType<typeof initializedSuccess> |
-    ReturnType<typeof sendMessage> |
+    ReturnType<typeof sendMessage> | ReturnType<typeof savePhotoSuccess> |
     ReturnType<typeof followSuccess> | ReturnType<typeof unFollowSuccess> |
     ReturnType<typeof setUsers> | ReturnType<typeof setCurrentPage> |
     ReturnType<typeof setTotalUsersCount> | ReturnType<typeof setIsFetching> |

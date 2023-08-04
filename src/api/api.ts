@@ -37,14 +37,14 @@ export const profileAPI = {
     updateStatus(status: string) {
         return instance.put(`profile/status/`, {status});
     },
-    savePhoto(photoFile: any) {
+    savePhoto(file: File) {
         const formData = new FormData()
-        formData.append("image", photoFile)
-        return instance.put(`profile/photo/`, formData, {
+        formData.append("image", file)
+        return instance.put<GeneralResponseType<{ photos: { small: string, large: string } }>>(`profile/photo/`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
-        });
+        }).then(response => response.data);
     }
 }
 
@@ -62,3 +62,9 @@ export const authAPI = {
 
 
 
+//types
+export type GeneralResponseType<D = {}> = {
+    resultCode: number
+    messages: string[]
+    data: D
+}
