@@ -1,0 +1,11 @@
+@import "../../../common/styles/mixins";
+@import "../../../common/styles/variables";
+
+.postsBlock {
+    grid-area: posts;
+
+}
+
+.posts {
+    color: $mainTextColor;
+}

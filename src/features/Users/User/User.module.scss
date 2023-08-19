@@ -1,0 +1,43 @@
+@import "../../../common/styles/variables";
+@import "../../../common/styles/layouts";
+@import "../../../common/styles/mixins";
+
+.userContainer {
+  @extend .blocksBorder;
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  margin-bottom: 20px;
+  background-color: $blocksBackground;
+  border-top: 3px solid $borderTop;
+  .userMainBox {
+    display: flex;
+    padding: 16px;
+    gap: 16px;
+    border-bottom: $mainBorder;
+    .userName {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  .userButtons {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: $mainBorder;
+
+  }
+  .viewProfile {
+    padding: 16px;
+  }
+}
+
+.interactProfile > div {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 18px;
+  border-bottom: $mainBorder;
+  padding-bottom: 20px;
+
+}

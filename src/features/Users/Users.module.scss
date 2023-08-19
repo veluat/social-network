@@ -1,0 +1,30 @@
+@import "../../common/styles/variables";
+
+
+.userPhoto {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid $borderTop;
+}
+
+.userPage {
+    .pagination {
+        text-align: center;
+        margin: 40px;
+
+    }
+    .usersContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @media (max-width: 810px) {
+            justify-content: center;
+            gap: 20px;
+        }
+    }
+}
+
+
+
+

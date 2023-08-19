@@ -1,0 +1,34 @@
+@import "../../../common/styles/variables";
+@import "../../../common/styles/mixins";
+@import "../../../common/styles/layouts";
+
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItems {
+  padding: 10px;
+}
+
+.dialog {
+  @include flexRow();
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  border-bottom: 1.5px solid #eaebec;
+
+}
+
+.nameLink {
+  font-weight: 600;
+  text-decoration: none;
+  color: #212529;
+}
+.messages {
+  padding: 10px;
+}
+
+.userPhoto {
+  @extend .smallUserPhoto;
+}

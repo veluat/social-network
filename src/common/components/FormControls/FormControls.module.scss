@@ -1,0 +1,31 @@
+@import "../Buttons/Buttons.module.scss";
+
+.outlineNone{
+    outline: none;
+}
+
+.errorBorder {
+    border: 2px solid red;
+}
+
+.errorMessageColor {
+    margin: -10px 0 10px 0;
+    font-weight: 700;
+    color: red;
+}
+
+.loginButton {
+    @extend .connect;
+    width: 100%;
+}
+
+.rememberMe {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.captcha {
+    max-height: 90px;
+}

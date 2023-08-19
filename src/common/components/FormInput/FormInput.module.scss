@@ -1,0 +1,30 @@
+@import "../../styles/layouts";
+
+.formInputStyles {
+  @extend .inputTextareaBasicLayout;
+}
+
+
+.formInput {
+  @extend .formInputStyles;
+  text-align: center;
+  height: 27px;
+}
+
+.formCheckBox {
+  margin: 5px 40px;
+  width: 14px;
+  height: 14px;
+  position: relative;
+  accent-color: lightsteelblue;
+  cursor: pointer;
+  vertical-align: center;
+
+  &:after {
+    position: absolute;
+    font-size: 16px;
+    left: 20px;
+    width: 150px;
+    content: 'I`m looking for a job';
+  }
+}

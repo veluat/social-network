@@ -1,0 +1,55 @@
+@import "../../../../common/styles/mixins";
+@import "../../../../common/styles/variables";
+@import "../../../../common/styles/layouts";
+
+.item {
+    margin-bottom: 15px;
+    background-color: $blocksBackground;
+    border-top: 3px solid $borderTop;
+    @extend .blocksBorder;
+    img {
+        border-radius: 50px;
+        height: 50px;
+        width: 50px;
+    }
+    .nameBox {
+        @include flexRow;
+        align-items: center;
+        gap: 10px;
+        padding: 15px;
+        max-width: 100%;
+        overflow: auto;
+    }
+    .postMessage {
+        padding: 0 15px 15px 15px;
+        border-bottom: 1.5px solid #eaebec;
+    }
+    .postFooter {
+        @include flexRow;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 15px;
+        .likes {
+            @include flexRow;
+            gap: 4px;
+        }
+        .delete {
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+        }
+    }
+}
+
+
+.postForm {
+    @include flexRow;
+    background-color: $blocksBackground;
+    padding: 20px 30px;
+}
+
+

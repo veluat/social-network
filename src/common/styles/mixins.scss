@@ -1,0 +1,25 @@
+@import "./../styles/variables";
+
+@mixin flexRow() {
+  display: flex;
+}
+
+@mixin flexColumn() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin buttonStyle() {
+  padding: 8px 24px;
+  color: #f7f7f7;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  background-color: $primaryColor;
+  transition: all 0.3s ease-out;
+  &:hover {
+    box-shadow: 0 0 1px 1px $primaryColor;
+    outline: none;
+  }
+}

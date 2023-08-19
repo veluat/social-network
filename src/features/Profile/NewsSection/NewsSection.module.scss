@@ -1,0 +1,36 @@
+@import "../../../common/styles/layouts";
+@import "../../../common/styles/variables";
+
+.section {
+  border-top: 3px solid $borderTop;
+  grid-area: section;
+  .underDevelopment {
+    @extend .blocksBorder;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: $blocksBackground;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .news {
+    @extend .blocksBorder;
+    background-color: $blocksBackground;
+    border-top: 3px solid $borderTop;
+    & > h3,div {
+      padding: 15px;
+      border-bottom: $mainBorder;
+    }
+    & > h3 {
+      text-align: center;
+    }
+    .newsLink {
+      text-decoration: none;
+      color: $primaryColor;
+      font-weight: 600;
+    }
+  }
+
+}

@@ -1,0 +1,20 @@
+@import "../../../../common/components/FormInput/FormInput.module";
+
+.disabled {
+  pointer-events: none;
+}
+
+.statusInput {
+  @extend .formInputStyles;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  max-width: 100%;
+  overflow: auto;
+  gap: 10px;
+}

@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+
+.selectedPage {
+  font-weight: 700;
+  color: $primaryColor;
+}
+
+.page {
+  display: inline-block;
+  padding: 10px 5px;
+  min-width: 40px;
+  background-color: #ffffff;
+  border: $mainBorder;
+  cursor: pointer;
+}
+
+.arrowBasic {
+  background-color: #ffffff;
+  color: $mainTextColor;
+  border: $mainBorder;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  min-width: 25px;
+  padding: 10px 5px;
+
+  &:active {
+    background-color: $primaryColor;
+  }
+}
+
+.arrowLeft {
+  @extend .arrowBasic;
+  margin-right: 5px;
+}
+
+.arrowDoubleLeft {
+  @extend .arrowBasic;
+  margin-right: 2px;
+}
+
+.arrowRight {
+  @extend .arrowBasic;
+  margin-left: 5px;
+}
+
+.arrowDoubleRight {
+  @extend .arrowBasic;
+  margin-left: 2px;
+}

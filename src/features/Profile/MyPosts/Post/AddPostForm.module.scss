@@ -1,0 +1,21 @@
+@import "../../../../common/styles/layouts";
+@import "../../../../common/styles/variables";
+@import "../../../../common/styles/mixins";
+
+.addPostForm {
+  @extend .blocksBorder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  background-color: #f7f7f7;
+  min-height: 120px;
+  border-top: 3px solid $borderTop;
+  margin-bottom: 20px;
+  .messageTextarea {
+    width: 60%;
+  }
+  .sendPost {
+    @include buttonStyle();
+  }
+}

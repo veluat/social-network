@@ -1,0 +1,18 @@
+@import "../FormInput/FormInput.module";
+@import "../../styles/layouts";
+
+.formTextareaStyles {
+  @extend .inputTextareaBasicLayout;
+
+  text-align: left;
+ padding: 5px;
+  &:focus {
+    box-shadow: 0 0 3px 1px $primaryColor;
+    outline: none;
+  }
+}
+
+.styleTextarea {
+  @extend .formTextareaStyles;
+  resize: none;
+}
