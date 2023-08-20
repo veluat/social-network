@@ -16,7 +16,7 @@
   align-items: center;
   gap: 20px;
   padding: 16px;
-  border-bottom: 1.5px solid #eaebec;
+  border-bottom: 1.5px solid $borderTop;
 
 }
 
@@ -31,4 +31,8 @@
 
 .userPhoto {
   @extend .smallUserPhoto;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid $borderTop;
 }

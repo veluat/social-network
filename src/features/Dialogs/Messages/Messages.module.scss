@@ -48,8 +48,8 @@
   }
   .friendMessageText {
     padding: 5px 10px;
-    background-color: rgba(243, 244, 246, 1);
-    color: rgba(55, 65, 81, 1);
+    background-color: $primaryColor;
+    color: $mainTextColor;
     border-radius: 4px;
     position: relative;
     max-width: 80%;
@@ -75,10 +75,11 @@
   align-items: center;
   justify-content: center;
   gap: 50px;
-  background-color: #f8f9fa ;
+  background-color: $blocksBackground;
   min-height: 15%;
   .messageTextarea {
     width: 70%;
+    border-top: 3px solid $borderTop;
   }
 }
 
@@ -87,6 +88,7 @@
   color: white;
   font-weight: 600;
   outline: none;
+  border-top: 3px solid $borderTop;
   @include buttonStyle();
   transition: all 0.3s ease-out;
   &:hover {
