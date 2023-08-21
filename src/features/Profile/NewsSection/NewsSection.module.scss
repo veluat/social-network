@@ -12,13 +12,14 @@
     gap: 20px;
     background-color: $blocksBackground;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    border-top: 3px solid $borderTop;
   }
 
   .news {
     @extend .blocksBorder;
     background-color: $blocksBackground;
-    border-top: 3px solid $borderTop;
+    //border-bottom: 3px solid $borderTop;
     & > h3,div {
       padding: 15px;
       border-bottom: $mainBorder;

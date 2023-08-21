@@ -1,6 +1,7 @@
+@import "../../common/styles/variables";
+
 .profileContainer {
   display: grid;
-  //grid-template-columns: 1fr 2fr 1fr;
   grid-template-columns: 25% 50% 25%;
   grid-template-areas: 'profile-description posts section';
   gap: 16px;
@@ -22,5 +23,7 @@
 }
 
 .content__img {
-  width: 100%
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid $borderTop;
 }

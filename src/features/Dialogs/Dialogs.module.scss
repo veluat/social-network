@@ -4,37 +4,43 @@
 
 
 .dialogsContainer {
-    display: grid;
-    grid-template-columns: 3fr 7fr;
-    background-color: $blocksBackground;
-    height: 80vh;
-    @extend .blocksBorder;
-    border-top: 3px solid $borderTop;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  background-color: $blocksBackground;
+  height: 80vh;
+  @extend .blocksBorder;
+  border-top: 3px solid $borderTop;
 
-    .dialogsItems {
-        padding: 10px;
-        border-right: 1.5px solid #eaebec;
-        overflow-y: scroll;
+  .dialogsItems {
+    padding: 10px;
+    border-right: 1.5px solid $borderTop;
+    overflow-y: scroll;
 
+  }
+
+  .messagesContainer {
+    @include flexColumn;
+
+    .messages {
+      border-bottom: 1px solid $borderTop;
+      overflow-y: scroll;
+      flex-grow: 1;
+      height: 65vh;
+      padding: 10px;
+
+      span {
+        background: $borderTop;
+        padding: 5px 10px;
+      }
+
+      .userPhoto {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        border: 3px solid $borderTop;
+      }
     }
-    .messagesContainer {
-        @include flexColumn;
-        .messages {
-            border-bottom: 1px solid #eaebec;
-            border-top: 1px solid #eaebec;
-            overflow-y: scroll;
-            flex-grow: 1;
-            height: 65vh;
-            padding: 10px;
-
-            .userPhoto {
-                width: 220px;
-                height: 220px;
-                border-radius: 50%;
-                border: 3px solid $borderTop;
-            }
-        }
-    }
+  }
 
 }
 

@@ -12,11 +12,6 @@ export const NewsSection: React.FC<Props> = ({setPage}) => {
 
     return (
         <div className={styles.section}>
-            <div className={styles.underDevelopment}>
-                <SvgSelector svgName={'underDevelopment'}/>
-                <p>The project is under development. Some features may be unavailable.</p>
-
-            </div>
             <div className={styles.news}>
                 <h3>News</h3>
                 <div>With the unveiling of the Nevera Time Attack, at The Quail, A Motorsports Gathering, Rimac
@@ -34,6 +29,10 @@ export const NewsSection: React.FC<Props> = ({setPage}) => {
                     noisy motorcycles and cars.
                     <NavLink to={'/news'} onClick={onClickHandler} className={styles.newsLink}>..more</NavLink>
                 </div>
+            </div>
+            <div className={styles.underDevelopment}>
+                <SvgSelector svgName={'underDevelopment'}/>
+                <p>The project is under development. Some features may be unavailable.</p>
             </div>
         </div>
     );
