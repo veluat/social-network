@@ -3,7 +3,7 @@ import styles from './Header.module.scss'
 import {Menu} from "./menu/Menu";
 import {SvgSelector} from "../../common/components/svgSelector/svgSelector";
 import {AppPage} from "../../app/app-reducer";
-import logo from "./../../assets/images/logo-icon.png"
+import logo from "./../../assets/images/network.png"
 
 export const Header = (props: HeaderPropsType) => {
     return (

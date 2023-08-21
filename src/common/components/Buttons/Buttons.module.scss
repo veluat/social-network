@@ -14,8 +14,7 @@
   @extend .buttonCommon;
   text-decoration: none;
   width: 46%;
-  background: linear-gradient(256deg, #c4bfb6 0%, $primaryColor 100%);
-  //background: $primaryColor;
+  background: $primaryColor;
   color: #ffffff;
 }
 

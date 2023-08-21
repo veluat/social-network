@@ -5,18 +5,20 @@
 }
 
 .errorBorder {
-    border: 2px solid red;
+    border: 2px solid #dc2828;
 }
 
 .errorMessageColor {
     margin: -10px 0 10px 0;
     font-weight: 700;
-    color: red;
+    color: #dc2828;
 }
 
 .loginButton {
     @extend .connect;
-    width: 100%;
+    width: 60%;
+    position: relative;
+    top: 20px;
 }
 
 .rememberMe {

@@ -5,14 +5,42 @@ import {AppStateType} from "../../app/redux-store";
 import {Redirect} from "react-router-dom";
 import {LoginForm} from "../../common/components/FormControls/LoginForm";
 import s from './Login.module.scss'
-import logo from "./../../assets/images/logo-icon.png"
+import logo from "./../../assets/images/network.png"
 
 const Login = (props: commonType) => {
     if (props.isAuth) {
         return <Redirect to={"/profile"}/>
     }
     return (
+        <div className={s.center}>
         <div className={s.loginContainer}>
+            <div className={s.title}>
+                <img src={logo} alt="logo" className={s.logo}/>
+                <h1>Social Network</h1>
+            </div>
+            <div className={s.description}>
+                <h1>Welcome</h1>
+                <div className={s.line}></div>
+                <h3>To log in get registered <a
+                    href="https://social-network.samuraijs.com/signUp" className={s.apiLink}
+                    target={'_blank'}>here</a>
+                </h3>
+                <h3>or use common test account credentials:</h3>
+                <h3>Email: <b>free@samuraijs.com</b></h3>
+                <h3> Password: <b>free</b></h3>
+                <div className={s.line}></div>
+            </div>
+            <div className={s.loginForm}>
+                <div className={s.signIn}>
+                    <h2>Sign in</h2>
+                </div>
+                <LoginForm captchaUrl={props.captchaUrl} login={props.login} isSubmit={props.isSubmit}
+                           errorMessage={props.errorMessage}/>
+            </div>
+        </div>
+        </div>
+
+        /*<div className={s.loginContainer}>
             <div className={s.descriptionBox}>
                 <div className={s.title}>
                     <img src={logo} alt="logo" className={s.logo}/>
@@ -32,7 +60,7 @@ const Login = (props: commonType) => {
                 <LoginForm captchaUrl={props.captchaUrl} login={props.login} isSubmit={props.isSubmit}
                            errorMessage={props.errorMessage}/>
             </div>
-        </div>
+        </div>*/
     );
 };
 
