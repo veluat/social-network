@@ -25,7 +25,6 @@
             height: 180px;
             border-radius: 50%;
             margin-top: 8px;
-            border-radius: 50%;
             border: 3px solid $borderTop;
         }
 
@@ -54,7 +53,6 @@
     .settingButtons {
         text-align: center;
         margin-bottom: 10px;
-
         .settingButton {
             @include buttonStyle();
         }
@@ -65,9 +63,10 @@
         border-top: 3px solid $borderTop;
         @extend .blocksBorder;
         .profileDataContainer {
+            text-align: center;
             & > div:not(div:last-child) {
                 padding: 16px;
-                border-bottom: 1.5px solid #eaebec;
+                border-bottom: 1.5px solid $borderTop;
             }
 
             .aboutMe {
@@ -77,13 +76,14 @@
 
             .contact {
                 padding: 16px;
-                border-bottom: 2px solid #eaebec;
+                border-bottom: 2px solid $borderTop;
             }
         }
 
     }
 
     .editProfileInformation {
+
         @extend .blocksBorder;
         & > div:not(:first-child, :last-child) {
             padding: 16px;
@@ -103,8 +103,8 @@
             border-bottom: 2px solid #eaebec;
         }
         .profileEditStatus {
-            color: #ff0000;
-            border: 1px solid #ff0000;
+            color: red;
+            border: 1px solid red;
             border-radius: 5px;
             position: relative;
             z-index: 1;
@@ -116,18 +116,7 @@
     text-align: center;
 
     .saveButton {
-        background: none;
-        border: none;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
-        color: #007bff;
-        font-weight: 600;
-
-        &:hover {
-            color: darkblue;
-        }
+        @include buttonStyle();
     }
 }
 

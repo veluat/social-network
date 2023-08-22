@@ -1,8 +1,10 @@
+@import "../../../common/styles/variables";
+
 .loader {
   margin: 300px auto;
-  border: 16px solid #f3f3f3;
+  border: 16px solid $borderTop;
   border-radius: 50%;
-  border-top: 16px solid #3498db;
+  border-top: 16px solid $primaryColor;
   width: 220px;
   height: 220px;
   -webkit-animation: spin 2s linear infinite; /* Safari */

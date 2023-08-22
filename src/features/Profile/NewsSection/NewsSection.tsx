@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './NewsSection.module.scss'
 import {AppPage} from "../../../app/app-reducer";
 import {NavLink} from "react-router-dom";
 import {SvgSelector} from "../../../common/components/svgSelector/svgSelector";
+import {Modal} from "../../../common/components/Modal/Modal";
 
 export const NewsSection: React.FC<Props> = ({setPage}) => {
+
+    const [modalActive, setModalActive] = useState(false)
 
     const onClickHandler = () => {
         setPage('news')
@@ -12,6 +15,13 @@ export const NewsSection: React.FC<Props> = ({setPage}) => {
 
     return (
         <div className={styles.section}>
+            <div className={styles.aboutFeatures}>
+                <SvgSelector svgName={'info'}/>
+                <h3>Information
+                    <br/>
+                    ABOUT FEATURES</h3>
+                <button className={styles.openButton} onClick={() => setModalActive(true)}>Read</button>
+            </div>
             <div className={styles.news}>
                 <h3>News</h3>
                 <div>With the unveiling of the Nevera Time Attack, at The Quail, A Motorsports Gathering, Rimac
@@ -30,10 +40,7 @@ export const NewsSection: React.FC<Props> = ({setPage}) => {
                     <NavLink to={'/news'} onClick={onClickHandler} className={styles.newsLink}>..more</NavLink>
                 </div>
             </div>
-            <div className={styles.underDevelopment}>
-                <SvgSelector svgName={'underDevelopment'}/>
-                <p>The project is under development. Some features may be unavailable.</p>
-            </div>
+            {modalActive && <Modal active={modalActive} setActive={setModalActive}/>}
         </div>
     );
 };

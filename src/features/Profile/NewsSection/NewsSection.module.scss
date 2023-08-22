@@ -1,32 +1,43 @@
 @import "../../../common/styles/layouts";
 @import "../../../common/styles/variables";
+@import "../../../common/styles/mixins";
 
 .section {
-  border-top: 3px solid $borderTop;
+  //border-top: 3px solid $borderTop;
   grid-area: section;
-  .underDevelopment {
+
+  .aboutFeatures {
     @extend .blocksBorder;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 20px;
-    background-color: $blocksBackground;
     padding: 20px;
-    margin-top: 20px;
+    margin-bottom: 20px;
+    @extend .blocksBorder;
+    background-color: $blocksBackground;
     border-top: 3px solid $borderTop;
+
+    .openButton {
+      @include buttonStyle();
+    }
   }
 
   .news {
     @extend .blocksBorder;
     background-color: $blocksBackground;
-    //border-bottom: 3px solid $borderTop;
-    & > h3,div {
+    border-top: 3px solid $borderTop;
+    & > h3, div {
       padding: 15px;
       border-bottom: $mainBorder;
     }
+
     & > h3 {
       text-align: center;
     }
+
     .newsLink {
       text-decoration: none;
       color: $primaryColor;

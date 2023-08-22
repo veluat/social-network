@@ -57,8 +57,7 @@ export const ProfileDataForm = ({profile, isOwner, profileEditStatus, saveProfil
                               label="Write about a job which you're looking for..."
                               rows={3}
                               validationSchema={{}}
-                              register={register}
-                />
+                              register={register}/>
             </div>
             <div>
                 {Object.keys(profile.contacts).map(contact => {

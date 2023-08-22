@@ -1,0 +1,51 @@
+@import "../../../common/styles/variables";
+@import "../../../common/styles/mixins";
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 3s;
+
+
+  .modal_content {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: $blocksBackground;
+    border: 5px solid $primaryColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 30%;
+    height: 60%;
+    transition: 0.5s all;
+    @media screen and (max-width: 1220px) {
+      width: max-content;
+    }
+    h3 {
+      padding: 20px;
+    }
+
+    .close {
+      @include buttonStyle();
+    }
+  }
+}
+
+.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.activeContent {
+  //transform: scale(1);
+}
