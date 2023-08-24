@@ -14,14 +14,21 @@
     align-items: center;
     text-align: center;
     gap: 20px;
-    padding: 20px;
+    padding-top: 20px;
     margin-bottom: 20px;
     @extend .blocksBorder;
     background-color: $blocksBackground;
     border-top: 3px solid $borderTop;
 
+    .infoText {
+      border: 3px solid $borderTop;
+      padding: 10px 30px 40px 30px;
+    }
+
     .openButton {
       @include buttonStyle();
+      position: relative;
+      bottom: 38px;
     }
   }
 
@@ -29,6 +36,7 @@
     @extend .blocksBorder;
     background-color: $blocksBackground;
     border-top: 3px solid $borderTop;
+
     & > h3, div {
       padding: 15px;
       border-bottom: $mainBorder;

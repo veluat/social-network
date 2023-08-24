@@ -17,9 +17,11 @@ export const NewsSection: React.FC<Props> = ({setPage}) => {
         <div className={styles.section}>
             <div className={styles.aboutFeatures}>
                 <SvgSelector svgName={'info'}/>
-                <h3>Information
-                    <br/>
-                    ABOUT FEATURES</h3>
+                <div className={styles.infoText}>
+                    <h3>Information
+                        <br/>
+                        ABOUT FEATURES</h3>
+                </div>
                 <button className={styles.openButton} onClick={() => setModalActive(true)}>Read</button>
             </div>
             <div className={styles.news}>
