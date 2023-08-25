@@ -16,9 +16,11 @@ export const Modal: FC<Props> = ({active, setActive}) => {
             <div className={active ? `${s.modal_content} ${s.activeContent}` : s.modal_content}
                  onClick={e => e.stopPropagation()}>
                 <SvgSelector svgName={'underDevelopment'}/>
-                <h3>The project is under development.
-                    <br/>
-                    Some features may be unavailable.</h3>
+                <div className={s.infoText}>
+                    <h3>The project is under development.
+                        <br/>
+                        Some features may be unavailable.</h3>
+                </div>
                 <button className={s.close} onClick={closeHandler}>Close</button>
             </div>
         </div>

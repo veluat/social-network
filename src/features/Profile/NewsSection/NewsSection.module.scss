@@ -5,6 +5,7 @@
 .section {
   //border-top: 3px solid $borderTop;
   grid-area: section;
+  height: max-content;
 
   .aboutFeatures {
     @extend .blocksBorder;
@@ -21,7 +22,7 @@
     border-top: 3px solid $borderTop;
 
     .infoText {
-      border: 3px solid $borderTop;
+      border: 2px solid $borderTop;
       padding: 10px 30px 40px 30px;
     }
 

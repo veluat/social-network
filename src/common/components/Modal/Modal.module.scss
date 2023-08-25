@@ -16,7 +16,7 @@
 
 
   .modal_content {
-    padding: 20px;
+    padding: 52px;
     border-radius: 12px;
     background-color: $blocksBackground;
     border: 5px solid $primaryColor;
@@ -25,18 +25,25 @@
     justify-content: center;
     align-items: center;
     gap: 40px;
-    width: 30%;
-    height: 60%;
     transition: 0.5s all;
+
     @media screen and (max-width: 1220px) {
       width: max-content;
     }
+
+    .infoText {
+      border: 2px solid $borderTop;
+      padding: 0 10px 60px 10px;
+    }
+
     h3 {
       padding: 20px;
     }
 
     .close {
       @include buttonStyle();
+      position: relative;
+      bottom: 58px;
     }
   }
 }
