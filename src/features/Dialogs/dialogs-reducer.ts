@@ -4,53 +4,53 @@ import {IMessageFormInput} from "./Messages/AddMessageForm";
 const dialogs: DialogStateType = {
     dialogs: [
         {
-            name: 'Ashley Briggs',
+            name: 'Lily Collins ',
             id: v1(),
         },
         {
-            name: 'Carl Jenkins',
+            name: 'Mark Strong',
             id: v1(),
         },
         {
-            name: 'Bob Smith',
+            name: 'Poppy Smith',
             id: v1(),
         },
         {
-            name: 'Stacie Hall',
+            name: 'Paul Wesley',
             id: v1(),
         },
         {
-            name: 'Bertha Martin',
+            name: 'Rose McGowan',
             id: v1(),
         },
         {
-            name: 'Oliver Grey',
+            name: 'Mark Strong',
             id: v1(),
         },
         {
-            name: 'Ben White',
+            name: 'Nina Simone',
             id: v1(),
         },  {
-            name: 'Ian Holloway',
+            name: 'Mike Shinoda',
             id: v1(),
         },
         {
-            name: 'Brian O\'Neill',
+            name: 'Nil Keser',
             id: v1(),
         },
     ],
     messages: [
         {
             id: v1(),
-            message: 'Hello friend, can we appoint a meeting?'
+            message: 'Hi! How are you?'
         },
         {
             id: v1(),
-            message: 'Hello'
+            message: 'Hi. Fine'
         },
         {
             id: v1(),
-            message: 'Sure. Which time are you free this week?.'
+            message: 'Let\'s meet today?'
         },
     ]
 }
