@@ -5,30 +5,33 @@ const instance = axios.create({
     withCredentials: true,
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     headers: {
-        "API-KEY": 'aaa80c55-0a44-44bc-9139-4b0b82a58976',
+        "API-KEY": `${process.env.REACT_APP_API_KEY}`,
     },
 });
 
 export const usersAPI = {
-    getUsers(currentPage: number, pageSize: number) {
-        return instance.get<GetUsersResponseType>(`users?page=${currentPage}&count=${pageSize}`).then(response => response.data)
+    async getUsers(currentPage: number, pageSize: number) {
+        const response = await instance.get<GetUsersResponseType>(`users?page=${currentPage}&count=${pageSize}`);
+        return response.data;
     },
-    follow(id: number) {
-        return instance.post<CommonResponseType>(`follow/${id}`).then(response => response.data)
+    async follow(id: number) {
+        const response = await instance.post<CommonResponseType>(`follow/${id}`);
+        return response.data;
     },
-    unFollow(id: number) {
-        return instance.delete<CommonResponseType>(`follow/${id}`).then(response => response.data)
+    async unFollow(id: number) {
+        const response = await instance.delete<CommonResponseType>(`follow/${id}`);
+        return response.data;
     }
 }
 
 export const profileAPI = {
-    getUserProfile(userId?: number) {
-        return instance.get<ProfileType>(`profile/` + userId).then(response => response.data)
+    async getUserProfile(userId?: number) {
+        const response = await instance.get<ProfileType>(`profile/` + userId);
+        return response.data;
     },
-    getStatus(userId: string) {
-        return instance.get(`profile/status/` + userId).then(response => {
-            return response.data
-        })
+    async getStatus(userId: string) {
+        const response = await instance.get(`profile/status/` + userId);
+        return response.data;
     },
     updateStatus(status: string) {
         return instance.put<CommonResponseType>(`profile/status/`, {status: status})
