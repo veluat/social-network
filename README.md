@@ -1,9 +1,11 @@
-A social network that implements adding and deleting friends, authorization, sending messages etc. 
+# :globe_with_meridians: Social Network and Community App 
+### An application that provides a platform for users to connect, interact, and build a community. Users can log in to the app and interact with real users. The app features integration with a real server for data exchange, allowing users to create profiles, post updates, comment on posts, and engage with the community.
 
-The project is under development. Some features may be unavailable.
+### :white_check_mark: The full working project can be found [here](https://veluat.github.io/social-network-app)
 
-Technologies:
+## The project is under development. Some features may be unavailable.
 
+### Technologies:
 - React (class components)
 - TypeScript
 - Redux
@@ -14,7 +16,7 @@ Technologies:
 - Axios
 - SASS
 
-Installed Libraries:
+## Installed Libraries:
 
 - **antd** 
 - **axios** 
